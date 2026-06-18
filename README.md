@@ -4,73 +4,67 @@ A modernized rebuild of [ucanpooptoo.com](http://www.ucanpooptoo.com), a free
 educational resource for parents of children with encopresis. Plain static
 HTML/CSS/JS — no build step, no framework — so it drops straight onto GitHub Pages.
 
-## What's here so far
+## Pages (6 total)
+
+| Page | File |
+|---|---|
+| What is Encopresis? (home) | `index.html` |
+| Possible Causes | `possible-causes.html` |
+| Tips for Parents | `parent-tips.html` |
+| FAQ | `faq.html` |
+| Find a Pediatric GI | `find-a-pediatric-gi.html` |
+| Resources | `resources.html` |
+
+## File structure
 
 ```
 ucanpooptoo/
-├── index.html              ← Home ("What is Encopresis?")  ✅ done
+├── index.html
+├── possible-causes.html
+├── parent-tips.html
+├── faq.html
+├── find-a-pediatric-gi.html
+├── resources.html
 ├── assets/
-│   ├── css/styles.css      ← the whole design system (edit variables at the top to re-skin)
-│   ├── js/main.js          ← mobile menu toggle + auto copyright year
-│   └── img/
-│       ├── logo.png        ← original UCanPoopToo logo
-│       └── nih-logo.gif    ← NIH funding logo (footer)
+│   ├── css/styles.css   ← whole design system (edit the variables at the top to re-skin)
+│   ├── js/main.js       ← mobile menu toggle + auto copyright year
+│   └── img/             ← logo.png, nih-logo.gif
 └── README.md
 ```
 
-The header, footer, and nav are the shared "shell." When we build the other
-pages, we copy that shell and drop in each page's content, so everything stays
-consistent.
+The header, footer, and navigation are identical on every page, so the site
+feels like one consistent whole.
 
-## Preview it locally
+## Preview locally
 
-Just double-click `index.html`, or for a closer-to-real preview run a tiny server:
+Double-click `index.html`, or run a small server for a truer preview:
 
 ```
 cd ucanpooptoo
 python3 -m http.server 8000
-# then open http://localhost:8000
+# open http://localhost:8000
 ```
 
-## Put it on GitHub Pages
+## Deploy on GitHub Pages  ← (this is the step that fixes the "unstyled" problem)
 
-1. Create a repo (e.g. `ucanpooptoo`) and push these files to it.
-2. Repo → **Settings → Pages** → Source: **Deploy from a branch** → branch `main`, folder `/ (root)` → Save.
-3. After a minute it's live at `https://<your-username>.github.io/ucanpooptoo/`.
+The whole point: `index.html` and the `assets` folder must sit **at the repo root**,
+side by side. If they're missing or buried in an extra folder, the page loads with
+no styling.
 
-(When you connect your real domain later, you'd add a `CNAME` file — we can do that when you're ready.)
+1. In your repo: **Add file → Upload files**.
+2. Open the extracted `ucanpooptoo` folder and drag the items *inside* it
+   (all the `.html` files **and** the `assets` folder) into the upload box together —
+   not the `.zip`, and not the outer folder.
+3. Commit.
+4. **Settings → Pages** → Source: *Deploy from a branch* → `main` / `/ (root)` → Save.
+5. After a minute it's live at `https://<your-username>.github.io/<repo>/`.
 
-## How to edit / "vibe code"
+Your repo's file list should look exactly like the structure above.
 
-- **Change colors or fonts site-wide:** edit the variables at the top of `assets/css/styles.css`.
-- **Change wording:** edit the text directly in the `.html` files.
-- **Add a page:** copy an existing page, swap the `<main>` content, keep the header/footer.
+## Editing / "vibe coding"
+
+- **Colors & fonts site-wide:** edit the variables at the top of `assets/css/styles.css`.
+- **Wording:** edit the text in each `.html` file.
+- **FAQ:** each question is a `<details>` block in `faq.html`.
 
 Tell me what to change and I'll hand back updated files.
-
-## Pages still to build
-
-Mapped from the original site (faithful structure, modernized):
-
-| Page | New file |
-|---|---|
-| Possible Causes | `possible-causes.html` |
-| The Solution | `solution.html` |
-| Find a Pediatric GI | `find-a-pediatric-gi.html` |
-| Other Resources | `other-resources.html` |
-| Tips for Parents (hub) | `parent-tips.html` |
-| Proper Toilet Sitting | `proper-toilet-sitting.html` |
-| Legs Need to Reach the Floor | `legs-need-to-reach-the-floor.html` |
-| Tips for Laxative Use | `tips-for-laxative-use.html` |
-| Tips for Taking Trips | `tips-for-taking-trips.html` |
-| Treat Encopresis as a Team | `treat-as-a-team.html` |
-| Working with Schools (504 Plan) | `working-with-schools-504.html` |
-| Still Having Accidents? | `still-having-accidents.html` |
-| Research Articles | `research-articles.html` |
-| Clinical Trials | `clinical-trials.html` |
-| FAQ | `faq.html` |
-| Full Disclaimer | `disclaimer.html` |
-
-The original also has dozens of individual research-citation pages and archived
-"expert chat" transcripts — we can fold those into the Research section or
-rebuild them later.

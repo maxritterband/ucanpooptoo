@@ -252,3 +252,71 @@ p  { margin: 0 0 1rem; }
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 }
+
+/* ============================================================
+   Inner-page components (added for the 5 content pages)
+   ============================================================ */
+
+/* Page header band */
+.page-head { background: linear-gradient(160deg, var(--blue-soft), #fff 85%); border-bottom: 1px solid var(--line); }
+.page-head .container { padding-block: clamp(2rem, 5vw, 3.5rem); }
+.page-head h1 { margin-bottom: 0.35rem; }
+.page-head p { color: var(--ink-soft); max-width: 60ch; margin: 0; }
+
+/* readable article column */
+.prose { max-width: 70ch; }
+.prose p { margin: 0 0 1.15rem; }
+.prose h2 { margin-top: 2rem; }
+.prose .lead { font-size: 1.15rem; color: var(--ink-soft); }
+
+/* Tips as numbered cards */
+.tips { display: grid; gap: 1rem; counter-reset: tip; }
+.tip {
+  position: relative; background: var(--surface); border: 1px solid var(--line);
+  border-radius: var(--radius); padding: 1.4rem 1.5rem 1.4rem 4.2rem; box-shadow: var(--shadow-sm);
+}
+.tip::before {
+  counter-increment: tip; content: counter(tip);
+  position: absolute; left: 1.1rem; top: 1.3rem;
+  width: 2rem; height: 2rem; border-radius: 50%;
+  background: var(--green); color: #fff; font-family: var(--font-display); font-weight: 900;
+  display: grid; place-items: center; font-size: 1rem;
+}
+.tip h3 { margin-bottom: 0.3rem; color: var(--blue-deep); }
+.tip p { margin: 0; color: var(--ink); }
+
+/* FAQ accordion (native <details>) */
+.faq { display: grid; gap: 0.75rem; max-width: 80ch; }
+.faq details {
+  background: var(--surface); border: 1px solid var(--line);
+  border-radius: var(--radius); box-shadow: var(--shadow-sm); overflow: hidden;
+}
+.faq summary {
+  cursor: pointer; list-style: none; padding: 1.1rem 1.3rem;
+  font-family: var(--font-display); font-weight: 800; color: var(--ink);
+  display: flex; justify-content: space-between; align-items: center; gap: 1rem;
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; color: var(--green-deep); font-size: 1.4rem; font-weight: 700; flex: none; }
+.faq details[open] summary::after { content: "–"; }
+.faq summary:hover { color: var(--blue-deep); }
+.faq .faq__body { padding: 0 1.3rem 1.2rem; color: var(--ink-soft); }
+.faq .faq__body p { margin: 0 0 0.8rem; }
+
+/* External resource list */
+.reslist { display: grid; gap: 1rem; }
+.res {
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.25rem 0.75rem;
+  background: var(--surface); border: 1px solid var(--line);
+  border-radius: var(--radius); padding: 1.1rem 1.3rem; box-shadow: var(--shadow-sm);
+}
+.res h3 { margin: 0; font-size: 1.05rem; color: var(--blue-deep); }
+.res p { margin: 0; color: var(--ink-soft); width: 100%; font-size: 0.95rem; }
+.res a.ext { font-family: var(--font-display); font-weight: 700; font-size: 0.92rem; }
+.res a.ext::after { content: " ↗"; }
+
+/* big call-to-action button row centered under content */
+.cta-block { margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--line); }
+
+/* current page in nav */
+.nav__menu a[aria-current="page"] { background: var(--blue-soft); color: var(--blue-deep); }
