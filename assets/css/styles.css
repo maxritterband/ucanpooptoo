@@ -320,3 +320,31 @@ p  { margin: 0 0 1rem; }
 
 /* current page in nav */
 .nav__menu a[aria-current="page"] { background: var(--blue-soft); color: var(--blue-deep); }
+
+/* ============================================================
+   "About Encopresis" (home) page specifics
+   ============================================================ */
+.intro-wrap::after { content: ""; display: block; clear: both; }
+.intro-photo {
+  float: right; width: min(42%, 340px);
+  margin: 0.25rem 0 1rem 1.75rem;
+  border-radius: var(--radius); box-shadow: var(--shadow-sm);
+}
+hr.rule { border: 0; border-top: 1px solid var(--line); margin: 2.75rem 0; }
+.statement {
+  text-align: center; font-family: var(--font-display); font-weight: 800;
+  font-size: clamp(1.25rem, 1.05rem + 1vw, 1.7rem); color: var(--green-deep);
+  margin: 0;
+}
+.box-title { color: var(--blue-deep); margin: 0 0 0.5rem; }
+@media (max-width: 640px) {
+  .intro-photo { float: none; width: 100%; margin: 0 0 1.25rem; }
+}
+
+/* Hero right column: child photo stacked above the stat box */
+.hero__aside { display: grid; gap: 1.25rem; align-content: start; }
+.hero__photo {
+  margin: 0; border-radius: var(--radius); overflow: hidden;
+  box-shadow: var(--shadow); background: var(--blue-soft); aspect-ratio: 2.3 / 1;
+}
+.hero__photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; display: block; }
