@@ -366,14 +366,25 @@ hr.rule { border: 0; border-top: 1px solid var(--line); margin: 2.75rem 0; }
 /* ============================================================
    Rebuilt blog posts + Tips index
    ============================================================ */
-.postlist { list-style: none; margin: 0 0 2.5rem; padding: 0; max-width: 76ch; }
-.postlist li { border-bottom: 1px solid var(--line); }
+.postlist { list-style: none; margin: 0 0 2.5rem; padding: 0; max-width: 76ch; display: grid; gap: 0.65rem; }
+.postlist li { border: 0; }
 .postlist a {
-  display: block; padding: 0.9rem 0.25rem; text-decoration: none;
-  font-family: var(--font-display); font-weight: 700; color: var(--ink);
-  transition: padding-left 0.15s ease, color 0.15s ease;
+  display: block; position: relative;
+  padding: 0.95rem 2.75rem 0.95rem 1.2rem;
+  background: var(--surface);
+  border: 1px solid var(--line); border-left: 4px solid var(--blue);
+  border-radius: var(--radius); box-shadow: var(--shadow-sm);
+  font-family: var(--font-display); font-weight: 700;
+  color: var(--blue-deep); text-decoration: none;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-left-color 0.15s ease;
 }
-.postlist a:hover { color: var(--blue-deep); padding-left: 0.6rem; }
+.postlist a::after {
+  content: "\2192"; position: absolute; right: 1.15rem; top: 50%;
+  transform: translateY(-50%); color: var(--green-deep); font-weight: 800;
+  transition: transform 0.15s ease;
+}
+.postlist a:hover { transform: translateY(-2px); box-shadow: var(--shadow); border-left-color: var(--green); }
+.postlist a:hover::after { transform: translate(4px, -50%); }
 
 .post.prose { max-width: 72ch; }
 .post audio { width: 100%; max-width: 520px; display: block; margin: 0.4rem 0 1rem; }
