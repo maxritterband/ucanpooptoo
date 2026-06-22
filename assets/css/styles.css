@@ -71,7 +71,8 @@ p  { margin: 0 0 1rem; }
 .section { padding-block: clamp(2.5rem, 6vw, 5rem); }
 .section--tint  { background: var(--blue-soft); }
 .section--green { background: var(--green-soft); }
-.measure { max-width: 68ch; }
+.measure { max-width: 44rem; margin-inline: auto; }
+.container:has(> .measure) > h2 { max-width: 44rem; margin-inline: auto; }
 .center { text-align: center; }
 .eyebrow {
   font-family: var(--font-display);
