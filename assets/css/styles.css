@@ -71,8 +71,7 @@ p  { margin: 0 0 1rem; }
 .section { padding-block: clamp(2.5rem, 6vw, 5rem); }
 .section--tint  { background: var(--blue-soft); }
 .section--green { background: var(--green-soft); }
-.measure { max-width: 44rem; margin-inline: auto; }
-.container:has(> .measure) > h2 { max-width: 44rem; margin-inline: auto; }
+.measure { max-width: none; }
 .center { text-align: center; }
 .eyebrow {
   font-family: var(--font-display);
@@ -279,7 +278,7 @@ p  { margin: 0 0 1rem; }
 }
 
 /* readable article column */
-.prose { max-width: 70ch; }
+.prose { max-width: none; }
 .prose p { margin: 0 0 1.15rem; }
 .prose h2 { margin-top: 2rem; }
 .prose .lead { font-size: 1.15rem; color: var(--ink-soft); }
@@ -301,7 +300,7 @@ p  { margin: 0 0 1rem; }
 .tip p { margin: 0; color: var(--ink); }
 
 /* FAQ accordion (native <details>) */
-.faq { display: grid; gap: 0.75rem; max-width: 80ch; }
+.faq { display: grid; gap: 0.75rem; }
 .faq details {
   background: var(--surface); border: 1px solid var(--line);
   border-radius: var(--radius); box-shadow: var(--shadow-sm); overflow: hidden;
@@ -367,7 +366,7 @@ hr.rule { border: 0; border-top: 1px solid var(--line); margin: 2.75rem 0; }
 /* ============================================================
    Rebuilt blog posts + Tips index
    ============================================================ */
-.postlist { list-style: none; margin: 0 0 2.5rem; padding: 0; max-width: 76ch; display: grid; gap: 0.65rem; }
+.postlist { list-style: none; margin: 0 0 2.5rem; padding: 0; display: grid; gap: 0.65rem; }
 .postlist li { border: 0; }
 .postlist a {
   display: block; position: relative;
