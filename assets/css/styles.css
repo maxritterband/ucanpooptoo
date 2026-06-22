@@ -348,3 +348,23 @@ hr.rule { border: 0; border-top: 1px solid var(--line); margin: 2.75rem 0; }
   box-shadow: var(--shadow); background: var(--blue-soft); aspect-ratio: 2.3 / 1;
 }
 .hero__photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; display: block; }
+
+/* ============================================================
+   Rebuilt blog posts + Tips index
+   ============================================================ */
+.postlist { list-style: none; margin: 0 0 2.5rem; padding: 0; max-width: 76ch; }
+.postlist li { border-bottom: 1px solid var(--line); }
+.postlist a {
+  display: block; padding: 0.9rem 0.25rem; text-decoration: none;
+  font-family: var(--font-display); font-weight: 700; color: var(--ink);
+  transition: padding-left 0.15s ease, color 0.15s ease;
+}
+.postlist a:hover { color: var(--blue-deep); padding-left: 0.6rem; }
+
+.post.prose { max-width: 72ch; }
+.post audio { width: 100%; max-width: 520px; display: block; margin: 0.4rem 0 1rem; }
+.post .audio-label { display: block; font-weight: 600; margin-top: 0.75rem; }
+.post ol li, .post ul li { margin-bottom: 0.6rem; }
+.post img { border-radius: var(--radius); margin: 1.25rem 0; box-shadow: var(--shadow-sm); }
+.back { margin-top: 2rem; padding-top: 1.25rem; border-top: 1px solid var(--line); }
+.back a { font-family: var(--font-display); font-weight: 700; text-decoration: none; }
