@@ -393,3 +393,8 @@ hr.rule { border: 0; border-top: 1px solid var(--line); margin: 2.75rem 0; }
 .post img { border-radius: var(--radius); margin: 1.25rem 0; box-shadow: var(--shadow-sm); }
 .back { margin-top: 2rem; padding-top: 1.25rem; border-top: 1px solid var(--line); }
 .back a { font-family: var(--font-display); font-weight: 700; text-decoration: none; }
+
+/* Tips dropdown titles behave like links (blue, green on hover); full-contrast body */
+details[name="tips"] > summary { color: var(--blue-deep); }
+details[name="tips"] > summary:hover { color: var(--green-deep); }
+details[name="tips"] .faq__body { color: var(--ink); }
