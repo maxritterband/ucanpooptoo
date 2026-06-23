@@ -387,7 +387,8 @@ hr.rule { border: 0; border-top: 1px solid var(--line); margin: 2.75rem 0; }
 .postlist a:hover::after { transform: translate(4px, -50%); }
 
 .post.prose { max-width: none; }
-.post audio { width: 100%; max-width: 520px; display: block; margin: 0.6rem 0 1rem; }
+.post audio { width: 100%; max-width: 520px; display: block; margin: 1rem 0 1.25rem; }
+.post br + audio { margin-top: 0.75rem; }
 .post p:has(audio), .post li:has(audio) { display: flex; flex-direction: column; align-items: flex-start; }
 .post .audio-label { display: block; font-weight: 600; margin-top: 0.75rem; }
 .post ol li, .post ul li { margin-bottom: 0.6rem; }
