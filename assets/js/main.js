@@ -24,7 +24,7 @@
       if (details.open) {
         // Small delay lets any sibling close before we scroll
         setTimeout(function () {
-          details.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          details.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }, 100);
       }
     });

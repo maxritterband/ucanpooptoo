@@ -194,6 +194,8 @@ p  { margin: 0 0 1rem; }
 .card h3 { color: var(--blue-deep); }
 .card .stat { font-family: var(--font-display); font-weight: 900; font-size: 1.8rem; color: var(--green-deep); }
 .card cite { display: block; margin-top: 0.75rem; font-style: normal; font-size: 0.8rem; color: var(--ink-soft); }
+.card cite a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
+.card cite a:hover { color: var(--blue-deep); }
 
 /* link cards (used to route to other pages) */
 .linkcard {
@@ -210,7 +212,7 @@ p  { margin: 0 0 1rem; }
 .site-footer { background: var(--ink); color: #cdd9df; padding-block: 2.5rem; margin-top: 2rem; }
 .site-footer a { color: #fff; }
 .footer__grid { display: grid; gap: 2rem; grid-template-columns: 1.4fr 1fr 1fr; align-items: start; }
-.footer__brand img { filter: brightness(0) invert(1); height: 30px; margin-bottom: 0.75rem; }
+.footer__brand img { height: 30px; margin-bottom: 0.75rem; }
 .site-footer h4 { color: #fff; font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.75rem; }
 .footer__links { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.4rem; }
 .footer__links a { text-decoration: none; font-size: 0.95rem; }
@@ -304,6 +306,7 @@ p  { margin: 0 0 1rem; }
 .faq details {
   background: var(--surface); border: 1px solid var(--line);
   border-radius: var(--radius); box-shadow: var(--shadow-sm); overflow: hidden;
+  scroll-margin-top: 84px;
 }
 .faq summary {
   cursor: pointer; list-style: none; padding: 1.1rem 1.3rem;
