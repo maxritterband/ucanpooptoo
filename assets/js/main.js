@@ -18,6 +18,18 @@
     });
   }
 
+  // Scroll opened accordion into view (Tips for Parents + FAQ pages)
+  document.querySelectorAll('details').forEach(function (details) {
+    details.addEventListener('toggle', function () {
+      if (details.open) {
+        // Small delay lets any sibling close before we scroll
+        setTimeout(function () {
+          details.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 100);
+      }
+    });
+  });
+
   // Auto-update the copyright year
   var yearEl = document.querySelector('[data-year]');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
